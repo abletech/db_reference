@@ -28,8 +28,8 @@ PKG_FILES = FileList[
   '[a-zA-Z]*',
   'generators/**/*',
   'lib/**/*',
-  'rails/**/*',
   'tasks/**/*',
+  'rails/**/*',
   'test/**/*'
 ]
 
