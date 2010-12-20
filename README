@@ -1,13 +1,38 @@
 Reference
 =========
 
-Introduction goes here.
+Used for creating a predefined set of models, similar to db:seed, but will not repopulate if entries already exist.
 
+Place references in 'db/reference/'
+References will be loaded in ascending order, so if an order is desired, prepend 000, 001, 002... etc to the filename.
+
+Run with:
+  rake reference:load
 
 Example
 =======
 
-Example goes here.
+The below example ensures that there are 6 locations existing in the database after running the 'rake reference:load'
 
 
-Copyright (c) 2010 [name of plugin creator], released under the MIT license
+# db/schema.rb
+create_table "locations", :force => true do |t|
+  t.string "name", :null => false
+end
+
+
+# db/reference/000_locations.rb
+Location.update_or_create :id => 1, :name => 'Wellington City'
+Location.update_or_create :id => 2, :name => 'Lower Hutt'
+Location.update_or_create :id => 3, :name => 'Kapiti Coast'
+Location.update_or_create :id => 4, :name => 'Porirua'
+Location.update_or_create :id => 5, :name => 'Upper Hutt'
+Location.update_or_create :id => 6, :name => 'Wairarapa'
+
+
+
+
+
+
+
+Copyright (c) 2010 Able Technology, released under the MIT license
