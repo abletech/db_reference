@@ -10,7 +10,7 @@ module DbReference
     # If it exists, it is updated with the given options. 
     #
     # Returns the record.
-    def self.update_or_create(attributes = {})
+    def update_or_create(attributes = {})
       id = attributes.delete(:id)
       record = find_or_initialize_by_id(id)
       record.attributes = attributes
