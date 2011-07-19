@@ -35,7 +35,7 @@ PKG_FILES = FileList[
 
 spec = Gem::Specification.new do |s|
   s.name = "db_reference"
-  s.version = "0.0.7"
+  s.version = "0.0.8"
   s.author = "Cam Fowler"
   s.email = "cameron.fowler@abletech.co.nz"
   s.homepage = "http://www.abletech.co.nz/"

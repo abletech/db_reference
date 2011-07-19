@@ -16,7 +16,7 @@ module DbReference
       record = find_or_initialize_by_id(id)
       
       attributes.each_pair do |key, value|
-        record.write_attribute key, value
+        record.send "#{key}=", value
       end
       
       begin
