@@ -12,9 +12,13 @@ module DbReference
     # Returns the record.
     def update_or_create(attributes = {})
       id = attributes.delete(:id)
+      
       record = find_or_initialize_by_id(id)
-      record.attributes = attributes
-
+      
+      attributes.each_pair do |key, value|
+        record.write_attribute key, value
+      end
+      
       begin
         record.save!
       rescue
