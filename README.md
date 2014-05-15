@@ -50,3 +50,8 @@ The below example ensures that there are 6 locations existing in the database af
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## History
+
+Version 0.1  initial release
+Version 0.2  Support for Rails 4

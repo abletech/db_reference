@@ -12,8 +12,12 @@ module DbReference
     # Returns the record.
     def update_or_create(attributes = {})
       id = attributes.delete(:id)
-      
-      record = find_or_initialize_by_id(id)
+     
+      record = if self.respond_to?(:find_or_initialize_by_id)
+        find_or_initialize_by_id(id)
+      else # rails4
+        where(id: id).first_or_initialize
+      end
       
       attributes.each_pair do |key, value|
         record.send "#{key}=", value

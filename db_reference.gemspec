@@ -16,5 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = DbReference::VERSION
 
   gem.add_runtime_dependency 'rake'
-  gem.add_runtime_dependency 'rails', '~> 3.0'
+  gem.add_runtime_dependency 'rails'
 end
